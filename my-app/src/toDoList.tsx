@@ -35,7 +35,7 @@ export function ToDoList() {
         <div className="App">
             <div className="App-body" style={{textAlign: "center"}}>
                 <h1>{name}'s To Do List</h1>
-                Items bought: {numRemainingItems}
+                <p id="counter">Items bought: {numRemainingItems}</p>
                 <form action=".">
                     {items.map((item) => ListItem(item, handleCheckboxClick))}
                 </form>
@@ -52,6 +52,7 @@ function ListItem(item: GroceryItem, changeHandler: ChangeEventHandler) {
             onChange={changeHandler}
             checked={item.isPurchased}
             name={item.name}
+            aria-label={item.name}
             />
             {item.name}
         </div>

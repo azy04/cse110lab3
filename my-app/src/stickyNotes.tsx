@@ -101,7 +101,7 @@ export const StickyNotes = () => {
               key={note.id}
               className="note-item"
               data-favorited={note.favorited}
-              data-id={note.id}
+              id={note.id + ""}
               style={{
                 background: currentTheme.background,
                 color: currentTheme.text,
@@ -112,9 +112,9 @@ export const StickyNotes = () => {
                 <Favorites notes={notes} id={note.id}/>
                 <button onClick={() => removeNoteHandler(note.id)} style={{color: currentTheme.text}}>x</button>
               </div>
-              <h2 contentEditable={true} suppressContentEditableWarning={true}> {note.title} </h2>
-              <p contentEditable={true} suppressContentEditableWarning={true}> {note.content} </p>
-              <p contentEditable={true} suppressContentEditableWarning={true}> {note.label} </p>
+              <h2 contentEditable={true} suppressContentEditableWarning={true} data-testid="title"> {note.title} </h2>
+              <p contentEditable={true} suppressContentEditableWarning={true} data-testid="content"> {note.content} </p>
+              <p contentEditable={true} suppressContentEditableWarning={true} data-testid="label"> {note.label} </p>
             </div>
         ))}
       </div>
